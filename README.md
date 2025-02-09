@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+QONTO PRICING PAGE
 
-Things you may want to cover:
+Time to complete : 4h
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The page is live on https://qonto-pricing-test-4cc727be3d12.herokuapp.com/
