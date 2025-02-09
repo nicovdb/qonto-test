@@ -1,0 +1,9 @@
+<div class="text-sm font-medium text-center flex rounded-md overflow-hidden border border-black divide-x divide-black" data-controller="tabs">
+  <% @offers.each do |offer| %>
+    <%= link_to offer.name,
+        offers_path(offer_id: offer.id),
+        data: { turbo_frame: :plans, action: 'click->tabs#highlight', tabs_target: 'offer' },
+        class: "block py-3 px-4 transition-colors duration-200 ease-in-out #{'bg-black text-white' if offer == @featured_offer}"
+    %>
+  <% end %>
+</div>

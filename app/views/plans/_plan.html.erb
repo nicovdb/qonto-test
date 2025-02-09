@@ -1,0 +1,29 @@
+<div class="flex flex-col gap-y-4 bg-white rounded border border-black p-6 <%= 'md:shadow-[-8px_4px_0_-4px_black] md:-translate-y-8 highlight-test' if plan.highlight%>">
+  <% if plan.highlight %>
+    <span class="bg-orange-200 rounded px-3 py-1 w-fit ml-auto">POPULAIRE</span>
+  <% end %>
+  <%= image_tag plan.image_path.presence || 'basic.png', height: 120, width: 150 %>
+  <h3 class="text-2xl lg:text-3xl font-medium"><%= plan.name %></h3>
+  <p class="text-lg"><%= plan.price.round %>€ <span class="text-gray-500 text-xs">/ mois HT</span></p>
+  <p><%= plan.description %></p>
+  <div>
+    <div class='block w-full py-3 px-4 mb-2 rounded text-white bg-black text-center cursor-pointer'>Ouvrir un compte</div>
+    <p class="text-xs text-gray-600">30 jours gratuits. Sans engagement. </p>
+  </div>
+  <hr class="border-gray-300">
+  <ul>
+    <% plan.options.each do |option| %>
+      <li class="text-sm py-2 flex items-start gap-x-4">
+        <%= image_tag 'check.svg', width: 20, height: 20, class: 'block' %>
+        <span>
+          <% if option_detail = option.detail.presence %>
+            <p class="font-bold"><%= option.description %></p>
+            <span class="text-xs text-gray-600"><%= option_detail %></span>
+          <% else %>
+            <p><%= option.description.html_safe %></p>
+          <% end %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+</div>
