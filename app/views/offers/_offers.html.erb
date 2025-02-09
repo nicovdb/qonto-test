@@ -1,0 +1,13 @@
+<%= form_with url: offers_path,
+              method: :get,
+              class: "text-sm font-medium text-center flex rounded-md overflow-hidden border border-black divide-x divide-black",
+              data: { controller: 'tabs', turbo_frame: :plans } do |f| %>
+  <%= f.collection_radio_buttons :offer_id, @offers, :id, :name, include_hidden: false do |b| %>
+    <div class="relative">
+      <%= b.radio_button(class: 'peer sr-only',
+        checked: b.object == @featured_offer,
+        data: { action: 'change->tabs#submit'}) %>
+      <%= b.label(class: 'block py-3 px-4 transition-colors duration-200 ease-in-out peer-checked:bg-black peer-checked:text-white cursor-pointer') %>
+    </div>
+  <% end %>
+<% end %>

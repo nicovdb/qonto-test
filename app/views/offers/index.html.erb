@@ -1,0 +1,11 @@
+<div class="flex flex-col items-center gap-y-12">
+  <h1 class='text-3xl md:text-5xl font-semibold text-gray-800'>Des tarifs adaptés à votre activité</h1>
+  <%= render 'offers' %>
+</div>
+
+<%= turbo_frame_tag :plans do %>
+  <div class="flex flex-col items-center gap-y-12 pt-6">
+    <p> <%= @featured_offer.description %> </p>
+    <%= render 'plans/plans' %>
+  </div>
+<% end %>
